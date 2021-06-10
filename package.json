@@ -1,0 +1,35 @@
+{
+  "name": "xi-hooks",
+  "version": "1.0.0",
+  "description": "xi-hooks",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bigbigDreamer/xi-hooks.git"
+  },
+  "author": "书生",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bigbigDreamer/xi-hooks/issues"
+  },
+  "homepage": "https://github.com/bigbigDreamer/xi-hooks#readme",
+  "devDependencies": {
+    "@babel/core": "^7.14.5",
+    "@babel/preset-env": "^7.14.5",
+    "@babel/preset-react": "^7.14.5",
+    "@types/react": "^17.0.11",
+    "babel-plugin-transform-async-to-promises": "^0.8.15",
+    "del": "^6.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-typescript": "^6.0.0-alpha.1",
+    "react": "^17.0.2",
+    "typescript": "^4.3.2",
+    "webpack": "^5.38.1",
+    "webpack-dev-server": "^3.11.2"
+  },
+  "dependencies": {}
+}
