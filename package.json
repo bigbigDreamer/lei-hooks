@@ -1,21 +1,21 @@
 {
-  "name": "xi-hooks",
+  "name": "lei-hooks",
   "version": "1.0.0",
-  "description": "xi-hooks",
+  "description": "lei-hooks",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bigbigDreamer/xi-hooks.git"
+    "url": "git+https://github.com/bigbigDreamer/lei-hooks.git"
   },
   "author": "书生",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bigbigDreamer/xi-hooks/issues"
+    "url": "https://github.com/bigbigDreamer/lei-hooks/issues"
   },
-  "homepage": "https://github.com/bigbigDreamer/xi-hooks#readme",
+  "homepage": "https://github.com/bigbigDreamer/lei-hooks#readme",
   "devDependencies": {
     "@babel/core": "^7.14.5",
     "@babel/preset-env": "^7.14.5",

@@ -1,11 +1,11 @@
 {
-  "name": "xi-hooks",
+  "name": "lei-hooks",
   "version": "1.0.0",
   "description": "## Desc",
   "main": "./lib/index.js",
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
-  "unpkg": "dist/xi-hooks.js",
+  "unpkg": "dist/lei-hooks.js",
   "directories": {
     "lib": "lib"
   },
