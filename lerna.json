@@ -8,7 +8,8 @@
       "includeMergedTags": true
     },
     "publish": {
-      "registry": "https://registry.npmjs.org/"
+      "registry": "https://registry.npmjs.org/",
+      "message": "chore(release): publish"
     }
   },
   "version": "independent"
