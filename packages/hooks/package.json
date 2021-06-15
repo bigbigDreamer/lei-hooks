@@ -10,7 +10,7 @@
     "lib": "lib"
   },
   "publishConfig": {
-    "registry": "https://registry.npmjs.com/"
+    "registry": "https://npm.pkg.github.com"
   },
   "repository": "https://github.com/bigbigDreamer/lei-hooks",
   "homepage": "https://github.com/bigbigDreamer/lei-hooks",
@@ -23,5 +23,5 @@
     "kind-of": "^6.0.3",
     "use-immer": "^0.5.2"
   },
-  "gitHead": "527d7f403b23184a5be3cd24fc67d3f5a081fe60"
+  "gitHead": "88e6c78fb3240ef785038b83334ed28500599008"
 }
