@@ -51,5 +51,9 @@ gulp.task('copyReadme', async function () {
     await gulp.src('../../README.md').pipe(gulp.dest('../../packages/hooks'));
 });
 
+gulp.task('copyLICENSE', async function () {
+    await gulp.src('../../LICENSE').pipe(gulp.dest('../../packages/hooks'));
+});
 
-exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyReadme');
+
+exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyReadme', 'copyLICENSE');
