@@ -75,6 +75,7 @@ function useCaptchaCount({ delay = 60, handler }: ArgsProps): ReturnsProps {
     }, []);
 
     useEffect(() => () => {
+        // clear timeRef
         timeRef.current = null;
     }, [])
 
