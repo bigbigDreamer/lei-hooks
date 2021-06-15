@@ -24,7 +24,6 @@ type ReturnsProps = {
     countDown: () => void;
 }
 
-
 function useCaptchaCount(props: ArgsProps): ReturnsProps;
 
 function useCaptchaCount({ delay = 60, handler }: ArgsProps): ReturnsProps {
