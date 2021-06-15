@@ -10,6 +10,7 @@
 - 阿里云传服务`hook`
 - `monaco lsp client hook`
 - 变种的未被优化的`ahooks`
+- 发送验证码计时器 `hook`
 - 等待挖掘
 
 ## Power Source
@@ -22,4 +23,4 @@
 
 ## LICENCE
 
-NO LICENCE～
+[MIT](./LICENSE)
