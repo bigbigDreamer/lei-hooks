@@ -50,7 +50,8 @@ function useCaptchaCount({ delay = 60, handler }: ArgsProps): ReturnsProps {
                             draft.canClick = true;
                             return;
                         }
-
+                        
+                        // 计数期间不可点击
                         if(draft.canClick) {
                             draft.canClick = false;
                         }
