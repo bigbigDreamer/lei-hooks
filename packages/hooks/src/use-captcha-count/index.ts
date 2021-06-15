@@ -5,7 +5,7 @@ import kindOf from 'kind-of';
 type ArgsProps = {
     /** 计时阈值 */
     delay?: number;
-    /** handler, shopuld be a promise */
+    /** handler, shopuld be return promise */
     handler: () => Promise<any>;
 }
 
