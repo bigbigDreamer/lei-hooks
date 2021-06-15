@@ -6,9 +6,6 @@
     "version": {
       "allowBranch": "main",
       "includeMergedTags": true
-    },
-    "publish": {
-      "registry": "https://registry.npmjs.org/"
     }
   },
   "version": "independent"

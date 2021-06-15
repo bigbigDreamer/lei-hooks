@@ -12,11 +12,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "jadeface.scholar@gmail.com",
+  "license": "MIT",
   "dependencies": {
     "kind-of": "^6.0.3",
     "use-immer": "^0.5.2"
   },
-  "gitHead": "4f1a12875286ddea8ad3545bb98473c1e71ff398"
+  "gitHead": "527d7f403b23184a5be3cd24fc67d3f5a081fe60"
 }
