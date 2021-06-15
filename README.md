@@ -11,3 +11,15 @@
 - `monaco lsp client hook`
 - 变种的未被优化的`ahooks`
 - 等待挖掘
+
+## Power Source
+
+愿这片净土不会遭遇资本压榨～
+
+愿`小蕾`一直在身边～
+
+愿每一份热情都可以有所期，有所得～
+
+## LICENCE
+
+NO LICENCE～
