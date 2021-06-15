@@ -6,7 +6,7 @@ type ArgsProps = {
     /** 计时阈值 */
     delay?: number;
     /** handler, shopuld be a promise */
-    handler: Promise<any>;
+    handler: () => Promise<any>;
 }
 
 type CaptchaState = {
@@ -36,11 +36,11 @@ function useCaptchaCount({ delay = 60, handler }: ArgsProps): ReturnsProps {
     });
 
     const countDown = useCallback(() => {
-        if (kindOf(handler) === 'promise') {
+        if (kindOf(handler()) === 'promise') {
             updateState(draft => {
                 draft.loading = true;
             })
-            handler.then(() => {
+            handler().then(() => {
                 // @ts-ignore
                 timeRef.current = setTimeout(() => {
                     updateState(draft => {
