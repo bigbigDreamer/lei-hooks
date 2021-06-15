@@ -15,6 +15,9 @@
   "bugs": {
     "url": "https://github.com/bigbigDreamer/lei-hooks/issues"
   },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
+  },
   "homepage": "https://github.com/bigbigDreamer/lei-hooks#readme",
   "devDependencies": {
     "@babel/core": "^7.14.5",
