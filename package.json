@@ -9,9 +9,6 @@
     "clean": "lerna clean --yes",
     "build": "lerna run build"
   },
-  "publishConfig": {
-    "registry":"https://npm.pkg.github.com"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/bigbigDreamer/lei-hooks.git"
