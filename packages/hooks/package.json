@@ -9,9 +9,6 @@
   "directories": {
     "lib": "lib"
   },
-  "publishConfig": {
-    "registry": "https://registry.npmjs.com/"
-  },
   "repository": "https://github.com/bigbigDreamer/lei-hooks.git",
   "homepage": "https://github.com/bigbigDreamer/lei-hooks",
   "scripts": {
@@ -24,5 +21,5 @@
     "kind-of": "^6.0.3",
     "use-immer": "^0.5.2"
   },
-  "gitHead": "fc1b3fb75f40fd4e7f1d324986681669e411664b"
+  "gitHead": "1b0047acb0c22b9eabe558825be8976cf79ea368"
 }
