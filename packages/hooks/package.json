@@ -12,7 +12,7 @@
   "repository": "https://github.com/bigbigDreamer/lei-hooks.git",
   "homepage": "https://github.com/bigbigDreamer/lei-hooks",
   "scripts": {
-    "build": "gulp && webpack-cli"
+    "build": "gulp"
   },
   "author": "jadeface.scholar@gmail.com",
   "license": "MIT",

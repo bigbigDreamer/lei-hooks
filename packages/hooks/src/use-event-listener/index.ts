@@ -78,3 +78,5 @@ function useEventListener(eventType: string, handler: Function, options: Options
         }
     }, [])
 }
+
+export default useEventListener

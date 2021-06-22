@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const del = require('del');
 const ts = require('gulp-typescript');
 const babel = require('gulp-babel');
+const webpack = require('webpack-stream');
 
 gulp.task('clean', async function () {
     await del('lib/**');
@@ -55,5 +56,10 @@ gulp.task('copyLICENSE', async function () {
     await gulp.src('../../LICENSE').pipe(gulp.dest('../../packages/hooks'));
 });
 
+gulp.task('unpkg', function() {
+    return gulp.src('es/index.js')
+        .pipe(webpack(require('./packages/hooks/webpack.config.js')))
+        .pipe(gulp.dest('dist/'));
+});
 
-exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyReadme', 'copyLICENSE');
+exports.default = gulp.series('clean', 'cjs', 'es', 'declaration', 'copyReadme', 'copyLICENSE', 'unpkg');
