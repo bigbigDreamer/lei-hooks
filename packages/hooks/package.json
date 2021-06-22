@@ -17,6 +17,7 @@
   "author": "jadeface.scholar@gmail.com",
   "license": "MIT",
   "dependencies": {
+    "immer": "^9.0.3",
     "kind-of": "^6.0.3",
     "use-immer": "^0.5.2"
   },
