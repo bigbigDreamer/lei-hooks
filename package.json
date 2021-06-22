@@ -1,5 +1,5 @@
 {
-  "name": "lei-hooks",
+  "name": "@bigbigDreamer/lei-hooks",
   "version": "1.0.0",
   "description": "lei-hooks",
   "main": "index.js",
@@ -8,6 +8,9 @@
     "bootstrap": "lerna bootstrap",
     "clean": "lerna clean --yes",
     "build": "lerna run build"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   },
   "repository": {
     "type": "git",
