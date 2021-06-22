@@ -7,7 +7,7 @@
   "types": "./lib/index.d.ts",
   "unpkg": "dist/lei-hooks.js",
   "publishConfig": {
-    "registry": "https://registry.npmjs.com/"
+    "registry": "https://registry.npmjs.org/"
   },
   "directories": {
     "lib": "lib"
@@ -24,5 +24,5 @@
     "kind-of": "^6.0.3",
     "use-immer": "^0.5.2"
   },
-  "gitHead": "1b0047acb0c22b9eabe558825be8976cf79ea368"
+  "gitHead": "fff296f0dd0aeb0cde6b029df1784a041738d866"
 }
