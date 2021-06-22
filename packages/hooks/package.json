@@ -6,6 +6,9 @@
   "module": "./es/index.js",
   "types": "./lib/index.d.ts",
   "unpkg": "dist/lei-hooks.js",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
+  },
   "directories": {
     "lib": "lib"
   },
