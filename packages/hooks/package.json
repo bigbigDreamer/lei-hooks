@@ -9,6 +9,9 @@
   "directories": {
     "lib": "lib"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.com/"
+  },
   "repository": "https://github.com/bigbigDreamer/lei-hooks.git",
   "homepage": "https://github.com/bigbigDreamer/lei-hooks",
   "scripts": {
