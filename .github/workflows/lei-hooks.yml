@@ -28,4 +28,4 @@ jobs:
           gulp
       - name: Lerna publish
         run: |
-          lerna publish
+          lerna publish patch --yes
