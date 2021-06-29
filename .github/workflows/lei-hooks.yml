@@ -28,9 +28,9 @@ jobs:
         env:
           CI: true
       - name: Authenticate with Registry
-        run: echo "registry=//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+        run: echo "registry=//registry.npmjs.org/:_authToken=NPM_AUTH_TOKEN" > ~/.npmrc
         env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Build core package
         run: |
           cd ./packages/hooks
@@ -47,4 +47,4 @@ jobs:
         run: |
           lerna publish patch --yes
         env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
