@@ -56,7 +56,7 @@ jobs:
       - name: Reset npmrc
         run: |
           cd ./packages/hooks
-          rm -rf ./npmrc
+          rm -rf ./.npmrc
           git add .
           git commit --allow-empty -m 'feat: rm -rf npmrc'
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
