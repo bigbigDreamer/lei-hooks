@@ -27,6 +27,10 @@ jobs:
           npm run bootstrap
         env:
           CI: true
+      - name: Authenticate with Registry
+        run: echo "registry=//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/.npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       - name: Build core package
         run: |
           cd ./packages/hooks
@@ -45,15 +49,15 @@ jobs:
        # env:
         #  NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      # - name: Commit changes
-       # run: |
-        #    git add .
-         #   git commit --allow-empty -m 'commit .npmrc'
-          #  git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
+     - name: Commit changes
+      run: |
+          git add .
+          git commit --allow-empty -m 'commit .npmrc'
+          git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
+
 
       - name: Lerna publish
-        uses: smartlyio/lerna-publish-action@v2
-        with:
-         bump: patch
+        run: |
+          lerna publish patch --yes
         env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
