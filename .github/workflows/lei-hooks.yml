@@ -39,6 +39,12 @@ jobs:
           git add .
           git commit --allow-empty -m 'commit gulp is generate'
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
+      - name: Add npm token
+        run: |
+          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Lerna publish
         run: |
           lerna publish patch --yes
