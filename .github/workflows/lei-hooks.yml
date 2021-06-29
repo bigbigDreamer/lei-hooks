@@ -27,9 +27,10 @@ jobs:
           git config --global user.name "bigbigDreamer"
           git config --global user.email "jadeface.scholar@gmail.com"
           npm set unsafe-perm true -g
-          npm set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN} -g
-          npm set username ${NPM_USERNAME} -g
-          npm set email ${NPM_EMAIL} -g
+          npm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN -g
+          npm set username $NPM_USERNAME -g
+          npm set email $NPM_EMAIL -g
+          npm login
 #      - name: Del npmrc
 #        run: |
 #          rm -rf ./.npmrc
