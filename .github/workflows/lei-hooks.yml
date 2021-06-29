@@ -23,8 +23,8 @@ jobs:
         run: git checkout "${GITHUB_REF:11}"
       - name: Authenticate with Registry
         run: |
-          echo "registry=https://registry.npmjs.org/" > ./packages/hooks/.npmrc
-          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./packages/hooks/.npmrc
+          echo "registry=https://registry.npmjs.org/" > ./.npmrc
+          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Install lei-hooks deps
@@ -54,7 +54,6 @@ jobs:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Reset npmrc
         run: |
-          cd ./packages/hooks
           rm -rf ./.npmrc
           git add .
           git commit --allow-empty -m 'feat: rm -rf npmrc'
