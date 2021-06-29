@@ -30,7 +30,7 @@ jobs:
           gulp
       - name: Commit changes
         run: |
-          git config --global user.name "scholar"
+          git config --global user.name "bigbigDreamer"
           git config --global user.email "jadeface.scholar@gmail.com"
           git add .
           git commit -m "feat: commit gulp's generate"
