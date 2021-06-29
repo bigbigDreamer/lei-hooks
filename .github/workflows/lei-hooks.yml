@@ -34,7 +34,7 @@ jobs:
           git config --global user.name "bigbigDreamer"
           git config --global user.email "jadeface.scholar@gmail.com"
           git add .
-          git commit -m --allow-empty - "feat: commit gulp's generate"
+          git commit -m --allow-empty "feat: commit gulp's generate"
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git  main
       - name: Lerna publish
         run: |
