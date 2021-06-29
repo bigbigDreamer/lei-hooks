@@ -39,21 +39,21 @@ jobs:
           git add .
           git commit --allow-empty -m 'commit gulp is generate'
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
-      - name: Add npm token
-        run: |
-          echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
-          npm whoami
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      # - name: Add npm token
+       # run: |
+       #   echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+       # env:
+        #  NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
-      - name: Commit changes
-        run: |
-            git add .
-            git commit --allow-empty -m 'commit .npmrc'
-            git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
+      # - name: Commit changes
+       # run: |
+        #    git add .
+         #   git commit --allow-empty -m 'commit .npmrc'
+          #  git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
 
       - name: Lerna publish
-        run: |
-          lerna publish patch --yes
+        uses: smartlyio/lerna-publish-action@v2
+        with:
+         bump: patch
         env:
-          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
