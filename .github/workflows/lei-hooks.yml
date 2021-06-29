@@ -30,20 +30,16 @@ jobs:
           npm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN -g
           npm set username $NPM_USERNAME -g
           npm set email $NPM_EMAIL -g
-          npm login
-#      - name: Del npmrc
-#        run: |
-#          rm -rf ./.npmrc
-#      - name: Authenticate with Registry
-#        run: |
-#          cat >> ./.npmrc <<EOF
-#          registry=https://registry.npmjs.org/
-#          //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
-#          EOF
-##           echo "registry=https://registry.npmjs.org/" > ./.npmrc
-##          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
-#        env:
-#          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Authenticate with Registry
+        run: |
+          cat >> ~/.npmrc <<EOF
+          registry=https://registry.npmjs.org/
+          //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
+          EOF
+#           echo "registry=https://registry.npmjs.org/" > ./.npmrc
+#          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
+        env:
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Install lei-hooks deps
         run: |
           npm i
