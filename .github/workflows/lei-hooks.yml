@@ -41,7 +41,9 @@ jobs:
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
       - name: Add npm token
         run: |
+          npm logout
           echo //registry.npmjs.org/:_authToken=${NPM_TOKEN} > .npmrc
+          npm whoami
         env:
           NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 
@@ -54,3 +56,5 @@ jobs:
       - name: Lerna publish
         run: |
           lerna publish patch --yes
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
