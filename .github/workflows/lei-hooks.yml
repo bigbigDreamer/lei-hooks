@@ -21,6 +21,15 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
+      - name: Prepare npm and git
+        run: |
+          git config credential.helper 'cache --timeout=120'
+          git config --global user.name "bigbigDreamer"
+          git config --global user.email "jadeface.scholar@gmail.com"
+          npm set unsafe-perm true -g
+          npm set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN} -g
+          npm set username ${NPM_USERNAME} -g
+          npm set email ${NPM_EMAIL} -g
 #      - name: Del npmrc
 #        run: |
 #          rm -rf ./.npmrc
@@ -48,16 +57,9 @@ jobs:
           gulp
       - name: Commit changes
         run: |
-          git config credential.helper 'cache --timeout=120'
-          git config --global user.name "bigbigDreamer"
-          git config --global user.email "jadeface.scholar@gmail.com"
           git add .
           git commit --allow-empty -m 'feat: commit gulp is generate'
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
-          npm set unsafe-perm true -g
-          npm set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN} -g
-          npm set username ${NPM_USERNAME} -g
-          npm set email ${NPM_EMAIL} -g
 
       - name: Lerna publish
         run: |
