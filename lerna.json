@@ -2,6 +2,8 @@
   "packages": [
     "packages/*"
   ],
+  "useWorkspaces": true,
+  "npmClient": "npm",
   "command": {
     "version": {
       "allowBranch": "main",
