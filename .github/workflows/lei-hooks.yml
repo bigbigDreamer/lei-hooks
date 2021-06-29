@@ -21,19 +21,19 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
-      - name: Del npmrc
-        run: |
-          rm -rf ./.npmrc
-      - name: Authenticate with Registry
-        run: |
-          cat >> ./.npmrc <<EOF
-          registry=https://registry.npmjs.org/
-          //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
-          EOF
-#           echo "registry=https://registry.npmjs.org/" > ./.npmrc
-#          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+#      - name: Del npmrc
+#        run: |
+#          rm -rf ./.npmrc
+#      - name: Authenticate with Registry
+#        run: |
+#          cat >> ./.npmrc <<EOF
+#          registry=https://registry.npmjs.org/
+#          //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
+#          EOF
+##           echo "registry=https://registry.npmjs.org/" > ./.npmrc
+##          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
+#        env:
+#          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Install lei-hooks deps
         run: |
           npm i
@@ -61,13 +61,13 @@ jobs:
 
       - name: Lerna publish
         run: |
-          cat ./.npmrc
+#          cat ./.npmrc
           lerna publish patch --yes
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      - name: Reset npmrc
-        run: |
-          rm -rf ./.npmrc
-          git add .
-          git commit --allow-empty -m 'feat: rm -rf npmrc'
-          git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
+#      - name: Reset npmrc
+#        run: |
+#          rm -rf ./.npmrc
+#          git add .
+#          git commit --allow-empty -m 'feat: rm -rf npmrc'
+#          git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
