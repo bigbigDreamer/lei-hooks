@@ -28,7 +28,8 @@ jobs:
         env:
           CI: true
       - name: Authenticate with Registry
-        run: echo "registry=//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
+        run: |
+          echo "registry=//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > ~/.npmrc
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Build core package
@@ -45,6 +46,7 @@ jobs:
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
       - name: Lerna publish
         run: |
+          cat ./.npmrc
           lerna publish patch --yes
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
