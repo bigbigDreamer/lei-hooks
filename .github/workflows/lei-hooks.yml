@@ -21,11 +21,11 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
-#      - name: Authenticate with Registry
-#        run: |
-#            echo "registry=//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
-#        env:
-#            NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Authenticate with Registry
+        run: |
+            echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./packages/hooks/.npmrc
+        env:
+            NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Install lei-hooks deps
         run: |
           npm i
@@ -44,7 +44,7 @@ jobs:
           git config --global user.name "bigbigDreamer"
           git config --global user.email "jadeface.scholar@gmail.com"
           git add .
-          git commit --allow-empty -m 'commit gulp is generate'
+          git commit --allow-empty -m 'feat: commit gulp is generate'
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
       - name: Lerna publish
         run: |
@@ -53,3 +53,10 @@ jobs:
           lerna publish patch --yes
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+      - name: Reset npmrc
+        run: |
+          cd ./packages/hooks
+          rm -rf ./npmrc
+          git add .
+          git commit --allow-empty -m 'feat: rm -rf npmrc'
+          git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
