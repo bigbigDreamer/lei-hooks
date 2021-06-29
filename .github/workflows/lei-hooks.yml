@@ -49,6 +49,7 @@ jobs:
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
       - name: Lerna publish
         run: |
+          cat ./.npmrc
           lerna publish patch --yes
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
