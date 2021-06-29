@@ -60,8 +60,8 @@ jobs:
 
       - name: Lerna publish
         run: |
-          lerna clean
-          lerna bootstrap
+          lerna clean --yes
+          lerna bootstrap --yes
           lerna publish patch --yes --no-verify-access
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
