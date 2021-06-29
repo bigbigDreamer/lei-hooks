@@ -28,6 +28,11 @@ jobs:
         run: |
           cd ./packages/hooks
           gulp
+      - name: Commit changes
+        run: |
+          git add .
+          git commit -m "feat: commit gulp's generate"
+          git push
       - name: Lerna publish
         run: |
           lerna publish patch --yes
