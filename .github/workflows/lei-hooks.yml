@@ -21,6 +21,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
+      - name: Del npmrc
+        run: |
+          rm -rf ./.npmrc
       - name: Authenticate with Registry
         run: |
           cat >> ./.npmrc <<EOF
@@ -51,6 +54,11 @@ jobs:
           git add .
           git commit --allow-empty -m 'feat: commit gulp is generate'
           git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
+          npm set unsafe-perm true -g
+          npm set //registry.npmjs.org/:_authToken ${NPM_AUTH_TOKEN} -g
+          npm set username ${NPM_USERNAME} -g
+          npm set email ${NPM_EMAIL} -g
+
       - name: Lerna publish
         run: |
           cat ./.npmrc
