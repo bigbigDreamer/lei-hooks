@@ -1,6 +1,6 @@
 {
   "name": "lei-hooks",
-  "version": "1.0.47",
+  "version": "1.0.48",
   "description": "## Desc",
   "main": "./lib/index.js",
   "module": "./es/index.js",
