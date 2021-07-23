@@ -62,7 +62,7 @@ jobs:
         run: |
           lerna clean --yes
           lerna bootstrap
-          lerna publish patch --yes --no-verify-access
+          lerna publish patch --yes --no-verify-access --legacy-auth ${{ secrets.NPM_AUTH_TOKEN }}
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
 #      - name: Reset npmrc
