@@ -1,6 +1,6 @@
 {
   "name": "lei-hooks",
-  "private": true,
+  "private": false,
   "workspaces": [
     "packages/*"
   ],
