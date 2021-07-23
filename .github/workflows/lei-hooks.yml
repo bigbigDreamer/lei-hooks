@@ -32,16 +32,6 @@ jobs:
           npm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN -g
           npm set username $NPM_USERNAME -g
           npm set email $NPM_EMAIL -g
-      - name: Authenticate with Registry
-        run: |
-          cat >> ~/.npmrc <<EOF
-          registry=https://registry.npmjs.org/
-          //registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}
-          EOF
-#           echo "registry=https://registry.npmjs.org/" > ./.npmrc
-#          echo "//registry.npmjs.org/:_authToken=${NPM_AUTH_TOKEN}" > ./.npmrc
-        env:
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
       - name: Install lei-hooks deps
         run: |
           npm i
@@ -64,12 +54,6 @@ jobs:
         run: |
           lerna clean --yes
           lerna bootstrap
-          lerna publish patch --yes
+          lerna publish patch --yes --legacy-auth ${{ secrets.NPM_AUTH_TOKEN }}
         env:
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
-      - name: Reset npmrc
-        run: |
-          rm -rf ./.npmrc
-          git add .
-          git commit --allow-empty -m 'feat: rm -rf npmrc'
-          git push -q https://${DOCS_GITHUB_TOKEN}@github.com/bigbigDreamer/lei-hooks.git
