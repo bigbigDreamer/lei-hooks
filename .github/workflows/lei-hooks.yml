@@ -13,7 +13,8 @@ jobs:
         node-version: [14.x]
 
     steps:
-      - uses: actions/checkout@v2
+      - name: Checkout Node Version
+        uses: actions/checkout@v2
         with:
           ref: ${{ github.head_ref }}
 
@@ -21,6 +22,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
+
       - name: Prepare repository
         run: git checkout "${GITHUB_REF:11}"
       - name: Prepare npm and git
@@ -28,15 +30,12 @@ jobs:
           git config credential.helper 'cache --timeout=120'
           git config --global user.name "bigbigDreamer"
           git config --global user.email "jadeface.scholar@gmail.com"
-          npm set unsafe-perm true -g
-          npm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN -g
-          npm set username $NPM_USERNAME -g
-          npm set email $NPM_EMAIL -g
+
       - name: Setup .npmrc file for publish
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
           registry-url: 'https://registry.npmjs.org'
+
       - name: Install lei-hooks deps
         run: |
           npm i
@@ -45,6 +44,7 @@ jobs:
         env:
           CI: true
           NPM_AUTH_TOKEN: ${{ secrets.NPM_AUTH_TOKEN }}
+
       - name: Build core package
         run: |
           cd ./packages/hooks
