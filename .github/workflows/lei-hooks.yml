@@ -32,6 +32,11 @@ jobs:
           npm set //registry.npmjs.org/:_authToken $NPM_AUTH_TOKEN -g
           npm set username $NPM_USERNAME -g
           npm set email $NPM_EMAIL -g
+      - name: Setup .npmrc file for publish
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install lei-hooks deps
         run: |
           npm i
